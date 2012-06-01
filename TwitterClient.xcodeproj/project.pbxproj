@@ -23,15 +23,15 @@
 		F44D55731578B7FB000FB764 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F44D55751578B7FB000FB764 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F44D55771578B7FB000FB764 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		F44D557B1578B7FB000FB764 /* TwitterClient-Info.plist */ = {isa = PBXFileReference; path = "TwitterClient-Info.plist"; sourceTree = "<group>"; };
+		F44D557B1578B7FB000FB764 /* TwitterClient-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TwitterClient-Info.plist"; sourceTree = "<group>"; };
 		F44D557D1578B7FB000FB764 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F44D557F1578B7FB000FB764 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F44D55811578B7FB000FB764 /* TwitterClient-Prefix.pch */ = {isa = PBXFileReference; path = "TwitterClient-Prefix.pch"; sourceTree = "<group>"; };
-		F44D55821578B7FB000FB764 /* TwitterClientAppDelegate.h */ = {isa = PBXFileReference; path = TwitterClientAppDelegate.h; sourceTree = "<group>"; };
+		F44D55811578B7FB000FB764 /* TwitterClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TwitterClient-Prefix.pch"; sourceTree = "<group>"; };
+		F44D55821578B7FB000FB764 /* TwitterClientAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwitterClientAppDelegate.h; sourceTree = "<group>"; };
 		F44D55831578B7FB000FB764 /* TwitterClientAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwitterClientAppDelegate.m; sourceTree = "<group>"; };
 		F44D55861578B7FB000FB764 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		F44D55891578B7FB000FB764 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		F44D558B1578B7FB000FB764 /* TwitterClientViewController.h */ = {isa = PBXFileReference; path = TwitterClientViewController.h; sourceTree = "<group>"; };
+		F44D558B1578B7FB000FB764 /* TwitterClientViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwitterClientViewController.h; sourceTree = "<group>"; };
 		F44D558C1578B7FB000FB764 /* TwitterClientViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwitterClientViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
