@@ -77,24 +77,28 @@
                 DZUIActivityIndicatorUtility * __block activityUtility = [DZUIActivityIndicatorUtility activityIndicatorInView:self.view withText:@"Requesting profile image update..."];
                 
                 [self.twitterClient updateProfileWithImageData:UIImageJPEGRepresentation(image, 0.75) account:self.selectedAccount completed:^(BOOL succeed, NSDictionary *userInfo) {
-                    //
-                    if ( succeed ) {
-                        //...
-                        [DZUIAlertUtility alertWithMessage:@"Profile image update successfully requested" 
-                                                     title:@"Information" forDuration:3];
-                    } else {
-                        // ...
-                        NSString *errorMessage = @"Unknown error";
-                        NSError *error = [userInfo objectForKey:@"error"];
-                        if ( error ) {
-                            errorMessage = [NSString stringWithFormat:@"Profile image update failed:%@", error.localizedDescription];
+                    // we are not in back in main/UI queue yet
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        //
+                        if ( succeed ) {
+                            //...
+                            [DZUIAlertUtility alertWithMessage:@"Profile image update successfully requested" 
+                                                         title:@"Information" forDuration:3];
+                        } else {
+                            // ...
+                            NSString *errorMessage = @"Unknown error";
+                            NSError *error = [userInfo objectForKey:@"error"];
+                            if ( error ) {
+                                errorMessage = [NSString stringWithFormat:@"Profile image update failed:%@", error.localizedDescription];
+                            }
+                            [DZUIAlertUtility alertWithMessage:errorMessage 
+                                                         title:@"Error"];
                         }
-                        [DZUIAlertUtility alertWithMessage:errorMessage 
-                                                     title:@"Error"];
-                    }
-                    utility = nil;
-                    [activityUtility dismiss];
-                    activityUtility = nil;
+                        utility = nil;
+                        [activityUtility dismiss];
+                        activityUtility = nil;                        
+                    });
+
                 }];
                 
             }];
@@ -120,16 +124,21 @@
             DZUIActivityIndicatorUtility * __block utility = [DZUIActivityIndicatorUtility activityIndicatorInView:self.view withText:@"Loading registered twitter accounts..."];
             
             [self.twitterClient queryAccountsWithCompletion:^(BOOL granted, NSArray *accounts) {
-                if ( granted && accounts.count > 0 ) {
-                    [self performSegueWithIdentifier:@"push_accounts" sender:accounts];
-                } else if ( granted ) {
-                    // No accounts registered
-                    [DZUIAlertUtility alertWithMessage:@"Please register a twitter account to your device" title:@"Information" forDuration:3];
-                } else {
-                    // Not granted.
-                }
-                [utility dismiss];
-                utility = nil;
+                
+                // We are not in the main/UI queue yet
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    //
+                    if ( granted && accounts.count > 0 ) {
+                        [self performSegueWithIdentifier:@"push_accounts" sender:accounts];
+                    } else if ( granted ) {
+                        // No accounts registered
+                        [DZUIAlertUtility alertWithMessage:@"Please register a twitter account to your device" title:@"Information" forDuration:3];
+                    } else {
+                        // Not granted.
+                    }
+                    [utility dismiss];
+                    utility = nil;
+                });
             }];
         }
             break;

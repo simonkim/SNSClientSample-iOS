@@ -7,6 +7,7 @@
 //
 
 #import "TwitterStatusCell.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation TwitterStatusCell
 @synthesize profileImageView = _profileImageView;
@@ -31,12 +32,13 @@
     // Configure the view for the selected state
 }
 
-- (UIImageView *) profileImageView
+- (void) setProfileImageView:(UIImageView *)profileImageView
 {
-    if ( _profileImageView == nil ) {
-        NSLog(@"_profileImageView not ready?");
+    // intercept the moment the image view object is set.
+    if ( profileImageView ) {
+        profileImageView.layer.cornerRadius = 4;
     }
-    return _profileImageView;
+    _profileImageView = profileImageView;
 }
 
 @end

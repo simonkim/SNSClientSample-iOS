@@ -17,6 +17,7 @@
 }
 @property (nonatomic, strong) NSArray *arrayStatuses;
 @property (nonatomic, strong) NSDateFormatter *twitterDateFormatter;
+@property (nonatomic, strong) NSMutableDictionary *imageCache;
 @end
 
 @implementation TwitterTimelineViewController
@@ -24,6 +25,7 @@
 @synthesize account = _account;
 @synthesize arrayStatuses = _arrayStatuses;
 @synthesize twitterDateFormatter = _twitterDateFormatter;
+@synthesize imageCache = _imageCache;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -79,6 +81,15 @@
     }
     return _twitterDateFormatter;
 }
+
+- (NSMutableDictionary *) imageCache
+{
+    if ( _imageCache == nil ) {
+        _imageCache = [NSMutableDictionary dictionary];
+    }
+    return _imageCache;
+}
+
 #pragma mark - Internal methods
 - (void) reloadTimeline
 {
@@ -181,25 +192,28 @@
         }
         
         // Profile image
+        statusCell.profileImageView.image = nil;
         NSString *imageURLString = [status valueForKeyPath:@"user.profile_image_url"];
         if ( imageURLString ) {
-            //statusCell.profileImageView.image = nil;
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-                //
-                NSURL *url = [NSURL URLWithString:imageURLString];
-                NSData *imageData = [NSData dataWithContentsOfURL:url];
-                NSLog(@"dataWithContentsOfURL:%d.%d", indexPath.section, indexPath.row);
-                dispatch_async(dispatch_get_main_queue(), ^{
+            UIImage *image = [self.imageCache objectForKey:imageURLString];
+            if ( image ) {
+                statusCell.profileImageView.image = image;
+            } else {
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
                     //
-                    UIImage *image = [UIImage imageWithData:imageData];
-                    //statusCell.profileImageView.image = image;
-                    statusCell.imageView.image = image;
-                    //[statusCell.contentView setNeedsDisplay];
-                    [statusCell setNeedsLayout];
-                    NSLog(@"imageWithData:%d.%d", indexPath.section, indexPath.row);
+                    NSURL *url = [NSURL URLWithString:imageURLString];
+                    NSData *imageData = [NSData dataWithContentsOfURL:url];
+                    NSLog(@"dataWithContentsOfURL:%d.%d", indexPath.section, indexPath.row);
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        //
+                        UIImage *image = [UIImage imageWithData:imageData];
+                        statusCell.profileImageView.image = image;
+                        [statusCell setNeedsLayout];
+                        NSLog(@"imageWithData:%d.%d", indexPath.section, indexPath.row);
+                        [self.imageCache setObject:image forKey:imageURLString];
+                    });
                 });
-            });
-            
+            }
         }
     }
     return cell;
