@@ -3,7 +3,7 @@
 //  TwitterClient
 //
 //  Created by Simon Kim on 12. 6. 3..
-//  Copyright (c) 2012년 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012년 http://iosappdev.co.kr. All rights reserved.
 //
 
 #import "TwitterAccountsViewController.h"

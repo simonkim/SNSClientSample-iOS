@@ -3,7 +3,7 @@
 //  TwitterClient
 //
 //  Created by Simon Kim on 12. 6. 1..
-//  Copyright (c) 2012년 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012년 http://iosappdev.co.kr. All rights reserved.
 //
 
 #import "TwitterClientUtility.h"
@@ -41,9 +41,6 @@
 #pragma mark - API
 - (void) queryAccountsWithCompletion:(void (^)(BOOL granted, NSArray *accounts)) completion
 {
-    //ACAccountStore *accountStore = [[ACAccountStore alloc] init];
-    //ACAccountType *accountType = [accountStore accountTypeWithAccountTypeIdentifier:ACAccountTypeIdentifierTwitter];
-    
     [self.accountStore requestAccessToAccountsWithType:self.accountTypeTwitter withCompletionHandler:^(BOOL granted, NSError *error){        
         if (granted) {
             NSArray *accounts = [self.accountStore accountsWithAccountType:self.accountTypeTwitter];  
@@ -59,6 +56,79 @@
 }
 
 /*
+succeed: YES | NO
+userInfo: { urlResponse: ..., response:..., error:... }
+*/
+- (void) requestWithAccount:(ACAccount *) account 
+                               URL:(NSURL *) url 
+                        parameters:(NSDictionary *) parameters 
+                     requestMethod:(TWRequestMethod) method 
+                         completed:(void (^)(BOOL succeed, NSDictionary *userInfo)) completed
+{
+    //  Build the request with our parameter 
+    TWRequest *request = [[TWRequest alloc] initWithURL:url 
+                                             parameters:parameters 
+                                          requestMethod:method];
+    // Attach the account object to this request
+    [request setAccount:account];
+        
+    // Perform request
+    [request performRequestWithHandler:^(NSData *responseData, NSHTTPURLResponse *urlResponse, NSError *error) {
+        BOOL result = NO;
+        NSMutableDictionary *userInfo = [NSMutableDictionary dictionary];
+        
+        // userInfo: { urlResponse:... }
+        if ( urlResponse && (urlResponse.statusCode / 100) == 2 ) {
+            // successfully requested
+            result = YES;
+            [userInfo setObject:urlResponse forKey:@"urlResponse"];
+        }
+        
+        if ( urlResponse ) {
+            NSLog(@"URLResponse:%@", [urlResponse description]);
+            NSLog(@"statusCode:%d", urlResponse.statusCode);
+            NSLog(@"headerFields:%@", [[urlResponse allHeaderFields] description]);
+        }
+        
+        
+        if (responseData) {
+            NSError *jsonError;
+            NSArray *timeline = [NSJSONSerialization JSONObjectWithData:responseData options:NSJSONReadingMutableLeaves error:&jsonError];            
+            if (timeline) {                          
+                // at this point, we have an object that we can parse
+                //NSLog(@"%@", timeline);
+                [userInfo setObject:timeline forKey:@"response"];
+            } else { 
+                // inspect the contents of jsonError
+                NSLog(@"%@", jsonError);
+                
+                error = jsonError;
+                result = NO;
+            }
+            
+        } else {
+            // inspect the contents of error 
+            NSLog(@"%@", error);
+        }
+        
+        if ( error ) {
+            [userInfo setObject:error forKey:@"error"];
+        }
+        
+        if ( completed ) completed( result, userInfo );
+    }];       
+}
+
+- (void) requestHomeTimelineWithAccount:(ACAccount *) account 
+                        parameters:(NSDictionary *) parameters 
+                         completed:(void (^)(BOOL succeed, NSDictionary *userInfo)) completed
+{
+    // GET statuses/home_timeline
+    // GET http://api.twitter.com/1/statuses/home_timeline.json?...
+    NSURL *url = [NSURL URLWithString:@"http://api.twitter.com/1/statuses/home_timeline.json"];
+    [self requestWithAccount:account URL:url parameters:parameters requestMethod:TWRequestMethodGET completed:completed];
+}
+/*
     succeed: YES | NO
     userInfo: { urlResponse: ..., response:..., error:... }
  */
@@ -67,10 +137,6 @@
     // http://api.twitter.com/1/account/update_profile_image.format 
     // parameters
     // image: base64 encoded GIF, JPG or PNG
-    
-    // Now make an authenticated request to our endpoint
-    NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
-    [params setObject:@"1" forKey:@"include_entities"];
     
     //  The endpoint that we wish to call
     NSURL *url = [NSURL URLWithString:@"http://api.twitter.com/1/account/update_profile_image.json"];

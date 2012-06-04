@@ -3,7 +3,7 @@
 //  TwitterClient
 //
 //  Created by Simon Kim on 12. 6. 1..
-//  Copyright (c) 2012년 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012년 http://iosappdev.co.kr. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -17,4 +17,8 @@
     sizeString: normal, mini, bigger, original
  */
 - (NSURL *) profileImageURLForUserName:(NSString *) username size:(NSString *) sizeString;
+- (void) requestHomeTimelineWithAccount:(ACAccount *) account 
+                             parameters:(NSDictionary *) parameters 
+                              completed:(void (^)(BOOL succeed, NSDictionary *userInfo)) completed;
+
 @end

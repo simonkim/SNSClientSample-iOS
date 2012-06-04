@@ -28,6 +28,8 @@
 		F4745C3B157C68500058461D /* DZUIActivityIndicatorUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = F4745C39157C68500058461D /* DZUIActivityIndicatorUtility.m */; };
 		F4745C40157C78080058461D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4745C3F157C78080058461D /* MobileCoreServices.framework */; };
 		F4745C46157C7D5C0058461D /* SimpleImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4745C45157C7D5C0058461D /* SimpleImageViewController.m */; };
+		F4F0DB33157CB58E00D03BA5 /* TwitterTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F0DB32157CB58E00D03BA5 /* TwitterTimelineViewController.m */; };
+		F4F0DB37157CB5AE00D03BA5 /* TwitterStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F0DB36157CB5AE00D03BA5 /* TwitterStatusCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,10 @@
 		F4745C3F157C78080058461D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F4745C44157C7D5C0058461D /* SimpleImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleImageViewController.h; sourceTree = "<group>"; };
 		F4745C45157C7D5C0058461D /* SimpleImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleImageViewController.m; sourceTree = "<group>"; };
+		F4F0DB31157CB58E00D03BA5 /* TwitterTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterTimelineViewController.h; sourceTree = "<group>"; };
+		F4F0DB32157CB58E00D03BA5 /* TwitterTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterTimelineViewController.m; sourceTree = "<group>"; };
+		F4F0DB35157CB5AE00D03BA5 /* TwitterStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusCell.h; sourceTree = "<group>"; };
+		F4F0DB36157CB5AE00D03BA5 /* TwitterStatusCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterStatusCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,8 +93,6 @@
 		F44D55641578B7FB000FB764 = {
 			isa = PBXGroup;
 			children = (
-				F4745C3F157C78080058461D /* MobileCoreServices.framework */,
-				F4745C3D157C77E90058461D /* CoreImage.framework */,
 				F44D55791578B7FB000FB764 /* TwitterClient */,
 				F44D55721578B7FB000FB764 /* Frameworks */,
 				F44D55701578B7FB000FB764 /* Products */,
@@ -106,6 +110,8 @@
 		F44D55721578B7FB000FB764 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4745C3F157C78080058461D /* MobileCoreServices.framework */,
+				F4745C3D157C77E90058461D /* CoreImage.framework */,
 				F44D559B1578BB70000FB764 /* Accounts.framework */,
 				F44D55991578BB59000FB764 /* Twitter.framework */,
 				F44D55731578B7FB000FB764 /* UIKit.framework */,
@@ -123,6 +129,8 @@
 				F44D55851578B7FB000FB764 /* MainStoryboard_iPhone.storyboard */,
 				F44D55881578B7FB000FB764 /* MainStoryboard_iPad.storyboard */,
 				F44D557A1578B7FB000FB764 /* Supporting Files */,
+				F44D55961578BB2C000FB764 /* TwitterClientUtility.h */,
+				F44D55971578BB2C000FB764 /* TwitterClientUtility.m */,
 				F4745C43157C7D1E0058461D /* ViewControllers */,
 				F4745C41157C7CFA0058461D /* Images */,
 				F4745C42157C7D090058461D /* Utilities */,
@@ -172,10 +180,12 @@
 				F44D55941578BADC000FB764 /* TwitterClientMenuViewController.m */,
 				F44D55CC157BAF73000FB764 /* TwitterAccountsViewController.h */,
 				F44D55CD157BAF73000FB764 /* TwitterAccountsViewController.m */,
-				F44D55961578BB2C000FB764 /* TwitterClientUtility.h */,
-				F44D55971578BB2C000FB764 /* TwitterClientUtility.m */,
 				F4745C44157C7D5C0058461D /* SimpleImageViewController.h */,
 				F4745C45157C7D5C0058461D /* SimpleImageViewController.m */,
+				F4F0DB31157CB58E00D03BA5 /* TwitterTimelineViewController.h */,
+				F4F0DB32157CB58E00D03BA5 /* TwitterTimelineViewController.m */,
+				F4F0DB35157CB5AE00D03BA5 /* TwitterStatusCell.h */,
+				F4F0DB36157CB5AE00D03BA5 /* TwitterStatusCell.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -257,6 +267,8 @@
 				F4745C3A157C68500058461D /* DZUIImagePickerUtility.m in Sources */,
 				F4745C3B157C68500058461D /* DZUIActivityIndicatorUtility.m in Sources */,
 				F4745C46157C7D5C0058461D /* SimpleImageViewController.m in Sources */,
+				F4F0DB33157CB58E00D03BA5 /* TwitterTimelineViewController.m in Sources */,
+				F4F0DB37157CB5AE00D03BA5 /* TwitterStatusCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

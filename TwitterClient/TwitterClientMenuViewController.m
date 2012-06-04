@@ -3,12 +3,13 @@
 //  TwitterClient
 //
 //  Created by Simon Kim on 12. 6. 1..
-//  Copyright (c) 2012년 __MyCompanyName__. All rights reserved.
+//  Copyright (c) 2012년 http://iosappdev.co.kr. All rights reserved.
 //
 
 #import "TwitterClientMenuViewController.h"
 #import "TwitterAccountsViewController.h"
 #import "SimpleImageViewController.h"
+#import "TwitterTimelineViewController.h"
 
 #import "TwitterClientUtility.h"
 #import "DZUIImagePickerUtility.h"
@@ -110,8 +111,6 @@
 
 #pragma mark - Table view data source
 
-
-
 - (void) handleMainMenuAtIndex:(NSUInteger) index
 {
     switch( index ) {
@@ -159,7 +158,13 @@
             break;
             
         case 3: // Timeline
-            [DZUIAlertUtility alertWithMessage:@"Timeline not implemented yet" title:@"Information" forDuration:3];
+        {
+            if ( self.selectedAccount ) {
+                [self performSegueWithIdentifier:@"push_timeline" sender:self];
+            } else {
+                [DZUIAlertUtility alertWithMessage:@"Please choose a twitter account" title:@"Information" forDuration:3];                
+            }
+        }
             
             break;
     }
@@ -187,7 +192,11 @@
         SimpleImageViewController *viewController = (SimpleImageViewController *) segue.destinationViewController;
         viewController.imageURL = sender;
         viewController.title = [NSString stringWithFormat:@"Profile Image for @%@", self.selectedAccount.username];
-    }
+    } else if ( [segue.identifier isEqualToString:@"push_timeline"] ) {
+        TwitterTimelineViewController *viewController = (TwitterTimelineViewController *) segue.destinationViewController;
+        viewController.twitterClient = self.twitterClient;
+        viewController.account = self.selectedAccount;
+    } // push_timeline
 }
 
 #pragma mark - TwitterAccountsViewControllerDelegate

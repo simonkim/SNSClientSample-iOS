@@ -79,15 +79,15 @@
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Ifn-Nx-gL4" style="IBUITableViewCellStyleDefault" id="KkT-9J-6B1">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Ifn-Nx-gL4" style="IBUITableViewCellStyleDefault" id="KkT-9J-6B1">
                                         <rect key="frame" x="0.0" y="143" width="320" height="45"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="10" y="0.0" width="300" height="43"/>
+                                            <rect key="frame" x="10" y="0.0" width="280" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Timeline" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Ifn-Nx-gL4">
-                                                    <rect key="frame" x="10" y="0.0" width="280" height="43"/>
+                                                    <rect key="frame" x="10" y="0.0" width="260" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -106,10 +106,89 @@
                         <outlet property="labelAccountUsername" destination="HBL-sW-cSs" id="yTX-t9-PPA"/>
                         <segue destination="T3B-fJ-ex8" kind="push" identifier="push_accounts" id="xvu-0J-JnI"/>
                         <segue destination="AuE-HB-pKk" kind="push" identifier="push_image_view" id="k2p-7c-7oU"/>
+                        <segue destination="91V-kt-clK" kind="push" identifier="push_timeline" id="IM9-eV-5Qg"/>
                     </connections>
                 </tableViewController>
             </objects>
             <point key="canvasLocation" x="76" y="140"/>
+        </scene>
+        <!--Twitter Timeline View Controller-->
+        <scene sceneID="Kys-wi-Lg4">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dB8-8c-3cN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="91V-kt-clK" customClass="TwitterTimelineViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="68" sectionHeaderHeight="22" sectionFooterHeight="22" id="niY-ya-Djp">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell_tweet_status" rowHeight="68" id="jWw-mR-1PB" customClass="TwitterStatusCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="68"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="67"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" id="NMZ-zx-aLy">
+                                            <rect key="frame" x="6" y="5" width="48" height="48"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Display Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="ngv-MA-zkY">
+                                            <rect key="frame" x="62" y="0.0" width="80" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="@twitter_id" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="CPR-Gy-uD7">
+                                            <rect key="frame" x="145" y="0.0" width="77" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="5m" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="ALn-PN-dkq">
+                                            <rect key="frame" x="269" y="0.0" width="42" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsFontSizeToFit="NO" id="LUT-aE-f2H">
+                                            <rect key="frame" x="62" y="18" width="249" height="49"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <outlet property="imageView" destination="NMZ-zx-aLy" id="vqG-zh-31x"/>
+                                    <outlet property="labelDisplayName" destination="ngv-MA-zkY" id="nDB-g5-8H4"/>
+                                    <outlet property="labelText" destination="LUT-aE-f2H" id="tVP-hz-x44"/>
+                                    <outlet property="labelTime" destination="ALn-PN-dkq" id="Q9G-yp-0IY"/>
+                                    <outlet property="labelUsername" destination="CPR-Gy-uD7" id="RN5-4p-O0t"/>
+                                    <outlet property="profileImageView" destination="NMZ-zx-aLy" id="bHL-l1-Khl"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="91V-kt-clK" id="W4J-D6-zOe"/>
+                            <outlet property="delegate" destination="91V-kt-clK" id="ViT-KP-pnI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="xI0-FF-kIq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="h24-FJ-6Sc">
+                            <connections>
+                                <action selector="actionRefresh:" destination="91V-kt-clK" id="2Ko-Y2-TEr"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+            </objects>
+            <point key="canvasLocation" x="131" y="749"/>
         </scene>
         <!--Simple Image View Controller-->
         <scene sceneID="htS-Fi-RpY">
@@ -133,7 +212,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="456" y="654"/>
+            <point key="canvasLocation" x="560" y="706"/>
         </scene>
         <!--Twitter Accounts View Controller - Twitter Accounts-->
         <scene sceneID="NVM-Vn-Kkc">
@@ -190,6 +269,36 @@
             <point key="canvasLocation" x="-318" y="140"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="SimpleImageViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SimpleImageViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="imageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="TwitterAccountsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TwitterAccountsViewController.h"/>
+        </class>
+        <class className="TwitterClientMenuViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TwitterClientMenuViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="labelAccountUsername" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="TwitterStatusCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TwitterStatusCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="labelDisplayName" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelText" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelTime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="labelUsername" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="profileImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="TwitterTimelineViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/TwitterTimelineViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
