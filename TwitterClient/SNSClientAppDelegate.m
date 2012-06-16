@@ -7,7 +7,7 @@
 //
 
 #import "SNSClientAppDelegate.h"
-#define kFacebookAppID  @"441082825910307"
+#define kFacebookAppID  @"YOUR_APP_ID"
 
 /// Facebook Integration Begin
 @interface SNSClientAppDelegate() <FBSessionDelegate>
