@@ -28,6 +28,20 @@
 		F4745C3B157C68500058461D /* DZUIActivityIndicatorUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = F4745C39157C68500058461D /* DZUIActivityIndicatorUtility.m */; };
 		F4745C40157C78080058461D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4745C3F157C78080058461D /* MobileCoreServices.framework */; };
 		F4745C46157C7D5C0058461D /* SimpleImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4745C45157C7D5C0058461D /* SimpleImageViewController.m */; };
+		F4B1D6E1158ADDAF0080BFEA /* blockquote.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B1D6DF158ADDAF0080BFEA /* blockquote.png */; };
+		F4B1D6E2158ADDAF0080BFEA /* blockquote@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B1D6E0158ADDAF0080BFEA /* blockquote@2x.png */; };
+		F4B1D6E6158ADDCA0080BFEA /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B1D6E4158ADDCA0080BFEA /* camera.png */; };
+		F4B1D6E7158ADDCA0080BFEA /* camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B1D6E5158ADDCA0080BFEA /* camera@2x.png */; };
+		F4B1D6E9158ADF2D0080BFEA /* paint.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B1D6E8158ADF2D0080BFEA /* paint.png */; };
+		F4B1D6EB158ADF560080BFEA /* paint@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B1D6EA158ADF560080BFEA /* paint@2x.png */; };
+		F4B1D6FB158AE4630080BFEA /* cross.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B1D6FA158AE4630080BFEA /* cross.png */; };
+		F4B1D6FD158AE4930080BFEA /* cross@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B1D6FC158AE4930080BFEA /* cross@2x.png */; };
+		F4B1D700158AF1BA0080BFEA /* ImageQuoteComposerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B1D6FF158AF1B90080BFEA /* ImageQuoteComposerViewController.m */; };
+		F4B1D703158AF1DF0080BFEA /* DZUISimpleColorPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B1D702158AF1DF0080BFEA /* DZUISimpleColorPickerViewController.m */; };
+		F4B1D708158B1A810080BFEA /* font.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B1D707158B1A810080BFEA /* font.png */; };
+		F4B1D70A158B1AA90080BFEA /* font@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B1D709158B1AA90080BFEA /* font@2x.png */; };
+		F4B1D721158B26F60080BFEA /* DZUIFontPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B1D720158B26F60080BFEA /* DZUIFontPickerViewController.m */; };
+		F4B1D724158B2E640080BFEA /* DZUIFontPreviewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4B1D723158B2E640080BFEA /* DZUIFontPreviewCell.m */; };
 		F4F0DB33157CB58E00D03BA5 /* TwitterTimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F0DB32157CB58E00D03BA5 /* TwitterTimelineViewController.m */; };
 		F4F0DB37157CB5AE00D03BA5 /* TwitterStatusCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F4F0DB36157CB5AE00D03BA5 /* TwitterStatusCell.m */; };
 /* End PBXBuildFile section */
@@ -67,6 +81,25 @@
 		F4745C3F157C78080058461D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F4745C44157C7D5C0058461D /* SimpleImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleImageViewController.h; sourceTree = "<group>"; };
 		F4745C45157C7D5C0058461D /* SimpleImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleImageViewController.m; sourceTree = "<group>"; };
+		F4B1D6DF158ADDAF0080BFEA /* blockquote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blockquote.png; sourceTree = "<group>"; };
+		F4B1D6E0158ADDAF0080BFEA /* blockquote@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blockquote@2x.png"; sourceTree = "<group>"; };
+		F4B1D6E4158ADDCA0080BFEA /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
+		F4B1D6E5158ADDCA0080BFEA /* camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera@2x.png"; sourceTree = "<group>"; };
+		F4B1D6E8158ADF2D0080BFEA /* paint.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paint.png; sourceTree = "<group>"; };
+		F4B1D6EA158ADF560080BFEA /* paint@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paint@2x.png"; sourceTree = "<group>"; };
+		F4B1D6FA158AE4630080BFEA /* cross.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cross.png; sourceTree = "<group>"; };
+		F4B1D6FC158AE4930080BFEA /* cross@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cross@2x.png"; sourceTree = "<group>"; };
+		F4B1D6FE158AF1B90080BFEA /* ImageQuoteComposerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageQuoteComposerViewController.h; sourceTree = "<group>"; };
+		F4B1D6FF158AF1B90080BFEA /* ImageQuoteComposerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageQuoteComposerViewController.m; sourceTree = "<group>"; };
+		F4B1D701158AF1DF0080BFEA /* DZUISimpleColorPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZUISimpleColorPickerViewController.h; sourceTree = "<group>"; };
+		F4B1D702158AF1DF0080BFEA /* DZUISimpleColorPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZUISimpleColorPickerViewController.m; sourceTree = "<group>"; };
+		F4B1D704158AF2220080BFEA /* DZUISimpleViewControllerDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DZUISimpleViewControllerDelegate.h; sourceTree = "<group>"; };
+		F4B1D707158B1A810080BFEA /* font.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = font.png; sourceTree = "<group>"; };
+		F4B1D709158B1AA90080BFEA /* font@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "font@2x.png"; sourceTree = "<group>"; };
+		F4B1D71F158B26F60080BFEA /* DZUIFontPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZUIFontPickerViewController.h; sourceTree = "<group>"; };
+		F4B1D720158B26F60080BFEA /* DZUIFontPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZUIFontPickerViewController.m; sourceTree = "<group>"; };
+		F4B1D722158B2E630080BFEA /* DZUIFontPreviewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZUIFontPreviewCell.h; sourceTree = "<group>"; };
+		F4B1D723158B2E640080BFEA /* DZUIFontPreviewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZUIFontPreviewCell.m; sourceTree = "<group>"; };
 		F4F0DB31157CB58E00D03BA5 /* TwitterTimelineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterTimelineViewController.h; sourceTree = "<group>"; };
 		F4F0DB32157CB58E00D03BA5 /* TwitterTimelineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterTimelineViewController.m; sourceTree = "<group>"; };
 		F4F0DB35157CB5AE00D03BA5 /* TwitterStatusCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterStatusCell.h; sourceTree = "<group>"; };
@@ -152,6 +185,16 @@
 		F4745C41157C7CFA0058461D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F4B1D707158B1A810080BFEA /* font.png */,
+				F4B1D709158B1AA90080BFEA /* font@2x.png */,
+				F4B1D6FA158AE4630080BFEA /* cross.png */,
+				F4B1D6FC158AE4930080BFEA /* cross@2x.png */,
+				F4B1D6E8158ADF2D0080BFEA /* paint.png */,
+				F4B1D6EA158ADF560080BFEA /* paint@2x.png */,
+				F4B1D6E4158ADDCA0080BFEA /* camera.png */,
+				F4B1D6E5158ADDCA0080BFEA /* camera@2x.png */,
+				F4B1D6DF158ADDAF0080BFEA /* blockquote.png */,
+				F4B1D6E0158ADDAF0080BFEA /* blockquote@2x.png */,
 				F44D55A11578C52E000FB764 /* LoginNormal.png */,
 				F44D55A21578C52E000FB764 /* LoginNormal@2x.png */,
 			);
@@ -186,6 +229,15 @@
 				F4F0DB32157CB58E00D03BA5 /* TwitterTimelineViewController.m */,
 				F4F0DB35157CB5AE00D03BA5 /* TwitterStatusCell.h */,
 				F4F0DB36157CB5AE00D03BA5 /* TwitterStatusCell.m */,
+				F4B1D6FE158AF1B90080BFEA /* ImageQuoteComposerViewController.h */,
+				F4B1D6FF158AF1B90080BFEA /* ImageQuoteComposerViewController.m */,
+				F4B1D701158AF1DF0080BFEA /* DZUISimpleColorPickerViewController.h */,
+				F4B1D702158AF1DF0080BFEA /* DZUISimpleColorPickerViewController.m */,
+				F4B1D704158AF2220080BFEA /* DZUISimpleViewControllerDelegate.h */,
+				F4B1D71F158B26F60080BFEA /* DZUIFontPickerViewController.h */,
+				F4B1D720158B26F60080BFEA /* DZUIFontPickerViewController.m */,
+				F4B1D722158B2E630080BFEA /* DZUIFontPreviewCell.h */,
+				F4B1D723158B2E640080BFEA /* DZUIFontPreviewCell.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -247,6 +299,16 @@
 				F44D558A1578B7FB000FB764 /* MainStoryboard_iPad.storyboard in Resources */,
 				F44D55A31578C52E000FB764 /* LoginNormal.png in Resources */,
 				F44D55A41578C52E000FB764 /* LoginNormal@2x.png in Resources */,
+				F4B1D6E1158ADDAF0080BFEA /* blockquote.png in Resources */,
+				F4B1D6E2158ADDAF0080BFEA /* blockquote@2x.png in Resources */,
+				F4B1D6E6158ADDCA0080BFEA /* camera.png in Resources */,
+				F4B1D6E7158ADDCA0080BFEA /* camera@2x.png in Resources */,
+				F4B1D6E9158ADF2D0080BFEA /* paint.png in Resources */,
+				F4B1D6EB158ADF560080BFEA /* paint@2x.png in Resources */,
+				F4B1D6FB158AE4630080BFEA /* cross.png in Resources */,
+				F4B1D6FD158AE4930080BFEA /* cross@2x.png in Resources */,
+				F4B1D708158B1A810080BFEA /* font.png in Resources */,
+				F4B1D70A158B1AA90080BFEA /* font@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +331,10 @@
 				F4745C46157C7D5C0058461D /* SimpleImageViewController.m in Sources */,
 				F4F0DB33157CB58E00D03BA5 /* TwitterTimelineViewController.m in Sources */,
 				F4F0DB37157CB5AE00D03BA5 /* TwitterStatusCell.m in Sources */,
+				F4B1D700158AF1BA0080BFEA /* ImageQuoteComposerViewController.m in Sources */,
+				F4B1D703158AF1DF0080BFEA /* DZUISimpleColorPickerViewController.m in Sources */,
+				F4B1D721158B26F60080BFEA /* DZUIFontPickerViewController.m in Sources */,
+				F4B1D724158B2E640080BFEA /* DZUIFontPreviewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
