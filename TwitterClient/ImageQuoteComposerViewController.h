@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DZUISimpleViewControllerDelegate.h"
 @interface ImageQuoteComposerViewController : UITableViewController
-
+@property (nonatomic, weak) id<DZUISimpleViewControllerDelegate> delegate;
+- (UIImage *) quoteImage;
+- (NSString *) quote;
+- (NSString *) signature;
 @end

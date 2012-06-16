@@ -8,11 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-#import "TwitterClientAppDelegate.h"
+#import "SNSClientAppDelegate.h"
 
 int main(int argc, char *argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([TwitterClientAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([SNSClientAppDelegate class]));
     }
 }

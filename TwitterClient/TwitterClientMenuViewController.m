@@ -7,16 +7,20 @@
 //
 
 #import "TwitterClientMenuViewController.h"
+#import <Twitter/TWTweetComposeViewController.h>
+
 #import "TwitterAccountsViewController.h"
 #import "SimpleImageViewController.h"
 #import "TwitterTimelineViewController.h"
+#import "ImageQuoteComposerViewController.h"
 
 #import "TwitterClientUtility.h"
 #import "DZUIImagePickerUtility.h"
 #import "DZUIAlertUtility.h"
 #import "DZUIActivityIndicatorUtility.h"
+#import "DZUISimpleViewControllerDelegate.h"
 
-@interface TwitterClientMenuViewController () <TwitterAccountsViewControllerDelegate>
+@interface TwitterClientMenuViewController () <TwitterAccountsViewControllerDelegate,DZUISimpleViewControllerDelegate >
 @property (weak, nonatomic) IBOutlet UILabel *labelAccountUsername;
 @property (nonatomic, strong) TwitterClientUtility *twitterClient;
 @property (nonatomic, strong) ACAccount *selectedAccount;
@@ -205,7 +209,11 @@
         TwitterTimelineViewController *viewController = (TwitterTimelineViewController *) segue.destinationViewController;
         viewController.twitterClient = self.twitterClient;
         viewController.account = self.selectedAccount;
-    } // push_timeline
+    } else if ( [segue.identifier isEqualToString:@"push_imagequote_tweet"] ) {
+        ImageQuoteComposerViewController *viewController = (ImageQuoteComposerViewController *) segue.destinationViewController;
+        viewController.delegate = self;
+    } // push_imagequote_tweet
+    // ImageQuoteComposerViewController
 }
 
 #pragma mark - TwitterAccountsViewControllerDelegate
@@ -216,6 +224,61 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
+#pragma mark - Internal methods
+- (BOOL) showTweetComposerWithImage:(UIImage *) image withURL:(NSURL *) url initialText:(NSString *) initialText
+{
+    // 1. Check if we can tweet
+    if ( [TWTweetComposeViewController canSendTweet] ) {
+        
+        // 2. Instantiation
+        TWTweetComposeViewController *viewController = [[TWTweetComposeViewController alloc] init];
+        
+        // 3, 4, 5. Initial Tweet contents
+        [viewController setInitialText:initialText];
+        if ( image ) {
+            [viewController addImage:image];
+        }
+        if ( url ) {
+            [viewController addURL:url];
+        }
+        
+        // 6. Completion Handler block
+        TWTweetComposeViewControllerCompletionHandler completionHandler =
+        ^(TWTweetComposeViewControllerResult result) {
+            // This block of code will be excuted on completion of the tweet request
+            // or the user cancelled
+            if ( result == TWTweetComposeViewControllerResultDone ) {
+                NSLog(@"Tweet was successful.");
+                [DZUIAlertUtility alertWithMessage:@"Tweet was successful" title:@"Information" forDuration:3];
+            } else if ( result == TWTweetComposeViewControllerResultCancelled ) {
+                NSLog(@"Tweet was unsuccessful.");
+                [DZUIAlertUtility alertWithMessage:@"Tweet was unsuccessful" title:@"Information"];
+            }
+            [self dismissModalViewControllerAnimated:YES];
+        };
+        [viewController setCompletionHandler:completionHandler];    
+        
+        // 7. Presentation
+        [self presentModalViewController:viewController animated:YES];
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+#pragma mark - DZUISimpleViewControllerDelegate
+- (void) viewControllerDone:(UIViewController *)vc
+{
+    if ( [vc isKindOfClass:[ImageQuoteComposerViewController class]] ) {
+        ImageQuoteComposerViewController *viewController = (ImageQuoteComposerViewController *) vc;
+        UIImage *image = [viewController quoteImage];
+        if ( image ) {
+            NSString *text = [NSString stringWithFormat:@"%@ -%@", [viewController quote], [viewController signature]];
+            [self showTweetComposerWithImage:image withURL:[NSURL URLWithString:@"http://www.iosappdev.co.kr"] initialText:text];
+            
+        }
+    }
+}
 #pragma mark - Actions
 
 

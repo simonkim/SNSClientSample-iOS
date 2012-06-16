@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:TwitterClient.xcodeproj">
+      location = "self:SNSClient.xcodeproj">
    </FileRef>
 </Workspace>

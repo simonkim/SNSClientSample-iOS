@@ -12,7 +12,7 @@
 		F44D55781578B7FB000FB764 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F44D55771578B7FB000FB764 /* CoreGraphics.framework */; };
 		F44D557E1578B7FB000FB764 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = F44D557C1578B7FB000FB764 /* InfoPlist.strings */; };
 		F44D55801578B7FB000FB764 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F44D557F1578B7FB000FB764 /* main.m */; };
-		F44D55841578B7FB000FB764 /* TwitterClientAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F44D55831578B7FB000FB764 /* TwitterClientAppDelegate.m */; };
+		F44D55841578B7FB000FB764 /* SNSClientAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F44D55831578B7FB000FB764 /* SNSClientAppDelegate.m */; };
 		F44D55871578B7FB000FB764 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44D55851578B7FB000FB764 /* MainStoryboard_iPhone.storyboard */; };
 		F44D558A1578B7FB000FB764 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F44D55881578B7FB000FB764 /* MainStoryboard_iPad.storyboard */; };
 		F44D55951578BADC000FB764 /* TwitterClientMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F44D55941578BADC000FB764 /* TwitterClientMenuViewController.m */; };
@@ -28,6 +28,15 @@
 		F4745C3B157C68500058461D /* DZUIActivityIndicatorUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = F4745C39157C68500058461D /* DZUIActivityIndicatorUtility.m */; };
 		F4745C40157C78080058461D /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4745C3F157C78080058461D /* MobileCoreServices.framework */; };
 		F4745C46157C7D5C0058461D /* SimpleImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4745C45157C7D5C0058461D /* SimpleImageViewController.m */; };
+		F4983819158C97C70078AE93 /* facebook.png in Resources */ = {isa = PBXBuildFile; fileRef = F4983815158C97C70078AE93 /* facebook.png */; };
+		F498381A158C97C70078AE93 /* facebook@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4983816158C97C70078AE93 /* facebook@2x.png */; };
+		F498381B158C97C70078AE93 /* Twitter.png in Resources */ = {isa = PBXBuildFile; fileRef = F4983817158C97C70078AE93 /* Twitter.png */; };
+		F498381C158C97C70078AE93 /* Twitter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4983818158C97C70078AE93 /* Twitter@2x.png */; };
+		F498382F158CA3640078AE93 /* FBDialog.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F4983822158CA3640078AE93 /* FBDialog.bundle */; };
+		F4983830158CA3640078AE93 /* libfacebook_ios_sdk.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F4983828158CA3640078AE93 /* libfacebook_ios_sdk.a */; };
+		F4983834158CAD880078AE93 /* SNSFBMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4983833158CAD880078AE93 /* SNSFBMenuViewController.m */; };
+		F4983836158CAE3E0078AE93 /* FBConnect.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F4983835158CAE3E0078AE93 /* FBConnect.bundle */; };
+		F4983839158CCD960078AE93 /* FBOGUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = F4983838158CC8100078AE93 /* FBOGUtility.m */; };
 		F4B1D6E1158ADDAF0080BFEA /* blockquote.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B1D6DF158ADDAF0080BFEA /* blockquote.png */; };
 		F4B1D6E2158ADDAF0080BFEA /* blockquote@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B1D6E0158ADDAF0080BFEA /* blockquote@2x.png */; };
 		F4B1D6E6158ADDCA0080BFEA /* camera.png in Resources */ = {isa = PBXBuildFile; fileRef = F4B1D6E4158ADDCA0080BFEA /* camera.png */; };
@@ -47,16 +56,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F44D556F1578B7FB000FB764 /* TwitterClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitterClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F44D556F1578B7FB000FB764 /* SNSClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNSClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F44D55731578B7FB000FB764 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F44D55751578B7FB000FB764 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		F44D55771578B7FB000FB764 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		F44D557B1578B7FB000FB764 /* TwitterClient-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TwitterClient-Info.plist"; sourceTree = "<group>"; };
+		F44D557B1578B7FB000FB764 /* SNSClient-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SNSClient-Info.plist"; sourceTree = "<group>"; };
 		F44D557D1578B7FB000FB764 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		F44D557F1578B7FB000FB764 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F44D55811578B7FB000FB764 /* TwitterClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TwitterClient-Prefix.pch"; sourceTree = "<group>"; };
-		F44D55821578B7FB000FB764 /* TwitterClientAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwitterClientAppDelegate.h; sourceTree = "<group>"; };
-		F44D55831578B7FB000FB764 /* TwitterClientAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwitterClientAppDelegate.m; sourceTree = "<group>"; };
+		F44D55811578B7FB000FB764 /* SNSClient-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SNSClient-Prefix.pch"; sourceTree = "<group>"; };
+		F44D55821578B7FB000FB764 /* SNSClientAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNSClientAppDelegate.h; sourceTree = "<group>"; };
+		F44D55831578B7FB000FB764 /* SNSClientAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNSClientAppDelegate.m; sourceTree = "<group>"; };
 		F44D55861578B7FB000FB764 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		F44D55891578B7FB000FB764 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
 		F44D55931578BADC000FB764 /* TwitterClientMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterClientMenuViewController.h; sourceTree = "<group>"; };
@@ -81,6 +90,30 @@
 		F4745C3F157C78080058461D /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		F4745C44157C7D5C0058461D /* SimpleImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleImageViewController.h; sourceTree = "<group>"; };
 		F4745C45157C7D5C0058461D /* SimpleImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleImageViewController.m; sourceTree = "<group>"; };
+		F4983815158C97C70078AE93 /* facebook.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = facebook.png; sourceTree = "<group>"; };
+		F4983816158C97C70078AE93 /* facebook@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "facebook@2x.png"; sourceTree = "<group>"; };
+		F4983817158C97C70078AE93 /* Twitter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Twitter.png; sourceTree = "<group>"; };
+		F4983818158C97C70078AE93 /* Twitter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Twitter@2x.png"; sourceTree = "<group>"; };
+		F4983820158CA3640078AE93 /* Facebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Facebook.h; sourceTree = "<group>"; };
+		F4983821158CA3640078AE93 /* FBConnect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBConnect.h; sourceTree = "<group>"; };
+		F4983822158CA3640078AE93 /* FBDialog.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBDialog.bundle; sourceTree = "<group>"; };
+		F4983823158CA3640078AE93 /* FBDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBDialog.h; sourceTree = "<group>"; };
+		F4983824158CA3640078AE93 /* FBFrictionlessRequestSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBFrictionlessRequestSettings.h; sourceTree = "<group>"; };
+		F4983825158CA3640078AE93 /* FBLoginDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBLoginDialog.h; sourceTree = "<group>"; };
+		F4983826158CA3640078AE93 /* FBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FBRequest.h; sourceTree = "<group>"; };
+		F4983827158CA3640078AE93 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		F4983828158CA3640078AE93 /* libfacebook_ios_sdk.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libfacebook_ios_sdk.a; sourceTree = "<group>"; };
+		F4983829158CA3640078AE93 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		F498382A158CA3640078AE93 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		F498382B158CA3640078AE93 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		F498382C158CA3640078AE93 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		F498382D158CA3640078AE93 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		F498382E158CA3640078AE93 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		F4983832158CAD880078AE93 /* SNSFBMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNSFBMenuViewController.h; sourceTree = "<group>"; };
+		F4983833158CAD880078AE93 /* SNSFBMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNSFBMenuViewController.m; sourceTree = "<group>"; };
+		F4983835158CAE3E0078AE93 /* FBConnect.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = FBConnect.bundle; sourceTree = "<group>"; };
+		F4983837158CC8100078AE93 /* FBOGUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FBOGUtility.h; sourceTree = "<group>"; };
+		F4983838158CC8100078AE93 /* FBOGUtility.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FBOGUtility.m; sourceTree = "<group>"; };
 		F4B1D6DF158ADDAF0080BFEA /* blockquote.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blockquote.png; sourceTree = "<group>"; };
 		F4B1D6E0158ADDAF0080BFEA /* blockquote@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blockquote@2x.png"; sourceTree = "<group>"; };
 		F4B1D6E4158ADDCA0080BFEA /* camera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera.png; sourceTree = "<group>"; };
@@ -117,6 +150,7 @@
 				F44D55741578B7FB000FB764 /* UIKit.framework in Frameworks */,
 				F44D55761578B7FB000FB764 /* Foundation.framework in Frameworks */,
 				F44D55781578B7FB000FB764 /* CoreGraphics.framework in Frameworks */,
+				F4983830158CA3640078AE93 /* libfacebook_ios_sdk.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,7 +160,8 @@
 		F44D55641578B7FB000FB764 = {
 			isa = PBXGroup;
 			children = (
-				F44D55791578B7FB000FB764 /* TwitterClient */,
+				F498381F158CA3640078AE93 /* facebook-ios-sdk */,
+				F44D55791578B7FB000FB764 /* SNSClient */,
 				F44D55721578B7FB000FB764 /* Frameworks */,
 				F44D55701578B7FB000FB764 /* Products */,
 			);
@@ -135,7 +170,7 @@
 		F44D55701578B7FB000FB764 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F44D556F1578B7FB000FB764 /* TwitterClient.app */,
+				F44D556F1578B7FB000FB764 /* SNSClient.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -154,30 +189,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		F44D55791578B7FB000FB764 /* TwitterClient */ = {
+		F44D55791578B7FB000FB764 /* SNSClient */ = {
 			isa = PBXGroup;
 			children = (
-				F44D55821578B7FB000FB764 /* TwitterClientAppDelegate.h */,
-				F44D55831578B7FB000FB764 /* TwitterClientAppDelegate.m */,
+				F44D55821578B7FB000FB764 /* SNSClientAppDelegate.h */,
+				F44D55831578B7FB000FB764 /* SNSClientAppDelegate.m */,
 				F44D55851578B7FB000FB764 /* MainStoryboard_iPhone.storyboard */,
 				F44D55881578B7FB000FB764 /* MainStoryboard_iPad.storyboard */,
 				F44D557A1578B7FB000FB764 /* Supporting Files */,
 				F44D55961578BB2C000FB764 /* TwitterClientUtility.h */,
 				F44D55971578BB2C000FB764 /* TwitterClientUtility.m */,
+				F4983837158CC8100078AE93 /* FBOGUtility.h */,
+				F4983838158CC8100078AE93 /* FBOGUtility.m */,
 				F4745C43157C7D1E0058461D /* ViewControllers */,
 				F4745C41157C7CFA0058461D /* Images */,
 				F4745C42157C7D090058461D /* Utilities */,
 			);
+			name = SNSClient;
 			path = TwitterClient;
 			sourceTree = "<group>";
 		};
 		F44D557A1578B7FB000FB764 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				F44D557B1578B7FB000FB764 /* TwitterClient-Info.plist */,
+				F44D557B1578B7FB000FB764 /* SNSClient-Info.plist */,
 				F44D557C1578B7FB000FB764 /* InfoPlist.strings */,
 				F44D557F1578B7FB000FB764 /* main.m */,
-				F44D55811578B7FB000FB764 /* TwitterClient-Prefix.pch */,
+				F44D55811578B7FB000FB764 /* SNSClient-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -185,6 +223,10 @@
 		F4745C41157C7CFA0058461D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F4983815158C97C70078AE93 /* facebook.png */,
+				F4983816158C97C70078AE93 /* facebook@2x.png */,
+				F4983817158C97C70078AE93 /* Twitter.png */,
+				F4983818158C97C70078AE93 /* Twitter@2x.png */,
 				F4B1D707158B1A810080BFEA /* font.png */,
 				F4B1D709158B1AA90080BFEA /* font@2x.png */,
 				F4B1D6FA158AE4630080BFEA /* cross.png */,
@@ -219,16 +261,8 @@
 		F4745C43157C7D1E0058461D /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				F44D55931578BADC000FB764 /* TwitterClientMenuViewController.h */,
-				F44D55941578BADC000FB764 /* TwitterClientMenuViewController.m */,
-				F44D55CC157BAF73000FB764 /* TwitterAccountsViewController.h */,
-				F44D55CD157BAF73000FB764 /* TwitterAccountsViewController.m */,
-				F4745C44157C7D5C0058461D /* SimpleImageViewController.h */,
-				F4745C45157C7D5C0058461D /* SimpleImageViewController.m */,
-				F4F0DB31157CB58E00D03BA5 /* TwitterTimelineViewController.h */,
-				F4F0DB32157CB58E00D03BA5 /* TwitterTimelineViewController.m */,
-				F4F0DB35157CB5AE00D03BA5 /* TwitterStatusCell.h */,
-				F4F0DB36157CB5AE00D03BA5 /* TwitterStatusCell.m */,
+				F4983831158CAD660078AE93 /* Facebook */,
+				F498381E158C98A50078AE93 /* Twitter */,
 				F4B1D6FE158AF1B90080BFEA /* ImageQuoteComposerViewController.h */,
 				F4B1D6FF158AF1B90080BFEA /* ImageQuoteComposerViewController.m */,
 				F4B1D701158AF1DF0080BFEA /* DZUISimpleColorPickerViewController.h */,
@@ -242,12 +276,62 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		F498381E158C98A50078AE93 /* Twitter */ = {
+			isa = PBXGroup;
+			children = (
+				F44D55931578BADC000FB764 /* TwitterClientMenuViewController.h */,
+				F44D55941578BADC000FB764 /* TwitterClientMenuViewController.m */,
+				F44D55CC157BAF73000FB764 /* TwitterAccountsViewController.h */,
+				F44D55CD157BAF73000FB764 /* TwitterAccountsViewController.m */,
+				F4745C44157C7D5C0058461D /* SimpleImageViewController.h */,
+				F4745C45157C7D5C0058461D /* SimpleImageViewController.m */,
+				F4F0DB31157CB58E00D03BA5 /* TwitterTimelineViewController.h */,
+				F4F0DB32157CB58E00D03BA5 /* TwitterTimelineViewController.m */,
+				F4F0DB35157CB5AE00D03BA5 /* TwitterStatusCell.h */,
+				F4F0DB36157CB5AE00D03BA5 /* TwitterStatusCell.m */,
+			);
+			name = Twitter;
+			sourceTree = "<group>";
+		};
+		F498381F158CA3640078AE93 /* facebook-ios-sdk */ = {
+			isa = PBXGroup;
+			children = (
+				F4983835158CAE3E0078AE93 /* FBConnect.bundle */,
+				F4983820158CA3640078AE93 /* Facebook.h */,
+				F4983821158CA3640078AE93 /* FBConnect.h */,
+				F4983822158CA3640078AE93 /* FBDialog.bundle */,
+				F4983823158CA3640078AE93 /* FBDialog.h */,
+				F4983824158CA3640078AE93 /* FBFrictionlessRequestSettings.h */,
+				F4983825158CA3640078AE93 /* FBLoginDialog.h */,
+				F4983826158CA3640078AE93 /* FBRequest.h */,
+				F4983827158CA3640078AE93 /* JSON.h */,
+				F4983828158CA3640078AE93 /* libfacebook_ios_sdk.a */,
+				F4983829158CA3640078AE93 /* NSObject+SBJSON.h */,
+				F498382A158CA3640078AE93 /* NSString+SBJSON.h */,
+				F498382B158CA3640078AE93 /* SBJSON.h */,
+				F498382C158CA3640078AE93 /* SBJsonBase.h */,
+				F498382D158CA3640078AE93 /* SBJsonParser.h */,
+				F498382E158CA3640078AE93 /* SBJsonWriter.h */,
+			);
+			name = "facebook-ios-sdk";
+			path = "../Facebook/Git/lib/facebook-ios-sdk";
+			sourceTree = "<group>";
+		};
+		F4983831158CAD660078AE93 /* Facebook */ = {
+			isa = PBXGroup;
+			children = (
+				F4983832158CAD880078AE93 /* SNSFBMenuViewController.h */,
+				F4983833158CAD880078AE93 /* SNSFBMenuViewController.m */,
+			);
+			name = Facebook;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F44D556E1578B7FB000FB764 /* TwitterClient */ = {
+		F44D556E1578B7FB000FB764 /* SNSClient */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F44D55901578B7FB000FB764 /* Build configuration list for PBXNativeTarget "TwitterClient" */;
+			buildConfigurationList = F44D55901578B7FB000FB764 /* Build configuration list for PBXNativeTarget "SNSClient" */;
 			buildPhases = (
 				F44D556B1578B7FB000FB764 /* Sources */,
 				F44D556C1578B7FB000FB764 /* Frameworks */,
@@ -257,9 +341,9 @@
 			);
 			dependencies = (
 			);
-			name = TwitterClient;
+			name = SNSClient;
 			productName = TwitterClient;
-			productReference = F44D556F1578B7FB000FB764 /* TwitterClient.app */;
+			productReference = F44D556F1578B7FB000FB764 /* SNSClient.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -268,11 +352,11 @@
 		F44D55661578B7FB000FB764 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				CLASSPREFIX = TwitterClient;
+				CLASSPREFIX = SNS;
 				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = iosappdev.co.kr;
 			};
-			buildConfigurationList = F44D55691578B7FB000FB764 /* Build configuration list for PBXProject "TwitterClient" */;
+			buildConfigurationList = F44D55691578B7FB000FB764 /* Build configuration list for PBXProject "SNSClient" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -284,7 +368,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F44D556E1578B7FB000FB764 /* TwitterClient */,
+				F44D556E1578B7FB000FB764 /* SNSClient */,
 			);
 		};
 /* End PBXProject section */
@@ -309,6 +393,12 @@
 				F4B1D6FD158AE4930080BFEA /* cross@2x.png in Resources */,
 				F4B1D708158B1A810080BFEA /* font.png in Resources */,
 				F4B1D70A158B1AA90080BFEA /* font@2x.png in Resources */,
+				F4983819158C97C70078AE93 /* facebook.png in Resources */,
+				F498381A158C97C70078AE93 /* facebook@2x.png in Resources */,
+				F498381B158C97C70078AE93 /* Twitter.png in Resources */,
+				F498381C158C97C70078AE93 /* Twitter@2x.png in Resources */,
+				F498382F158CA3640078AE93 /* FBDialog.bundle in Resources */,
+				F4983836158CAE3E0078AE93 /* FBConnect.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,7 +410,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F44D55801578B7FB000FB764 /* main.m in Sources */,
-				F44D55841578B7FB000FB764 /* TwitterClientAppDelegate.m in Sources */,
+				F44D55841578B7FB000FB764 /* SNSClientAppDelegate.m in Sources */,
 				F44D55951578BADC000FB764 /* TwitterClientMenuViewController.m in Sources */,
 				F44D55981578BB2C000FB764 /* TwitterClientUtility.m in Sources */,
 				F44D55AE1579F487000FB764 /* Base64Encoder.m in Sources */,
@@ -335,6 +425,8 @@
 				F4B1D703158AF1DF0080BFEA /* DZUISimpleColorPickerViewController.m in Sources */,
 				F4B1D721158B26F60080BFEA /* DZUIFontPickerViewController.m in Sources */,
 				F4B1D724158B2E640080BFEA /* DZUIFontPreviewCell.m in Sources */,
+				F4983834158CAD880078AE93 /* SNSFBMenuViewController.m in Sources */,
+				F4983839158CCD960078AE93 /* FBOGUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,9 +511,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TwitterClient/TwitterClient-Prefix.pch";
-				INFOPLIST_FILE = "TwitterClient/TwitterClient-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "TwitterClient/SNSClient-Prefix.pch";
+				INFOPLIST_FILE = "TwitterClient/SNSClient-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../Facebook/Git/lib/facebook-ios-sdk\"",
+				);
+				PRODUCT_NAME = SNSClient;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -430,9 +526,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "TwitterClient/TwitterClient-Prefix.pch";
-				INFOPLIST_FILE = "TwitterClient/TwitterClient-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "TwitterClient/SNSClient-Prefix.pch";
+				INFOPLIST_FILE = "TwitterClient/SNSClient-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../Facebook/Git/lib/facebook-ios-sdk\"",
+				);
+				PRODUCT_NAME = SNSClient;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -440,7 +540,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F44D55691578B7FB000FB764 /* Build configuration list for PBXProject "TwitterClient" */ = {
+		F44D55691578B7FB000FB764 /* Build configuration list for PBXProject "SNSClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F44D558E1578B7FB000FB764 /* Debug */,
@@ -449,7 +549,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F44D55901578B7FB000FB764 /* Build configuration list for PBXNativeTarget "TwitterClient" */ = {
+		F44D55901578B7FB000FB764 /* Build configuration list for PBXNativeTarget "SNSClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F44D55911578B7FB000FB764 /* Debug */,

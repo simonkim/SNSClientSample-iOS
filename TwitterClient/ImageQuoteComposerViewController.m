@@ -48,6 +48,7 @@
 @synthesize colorBackground = _colorBackground;
 @synthesize colorQuote = _colorQuote;
 @synthesize colorBy = _colorBy;
+@synthesize delegate = _delegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -229,7 +230,8 @@
     
     // Quote
     [self.colorQuote set];
-    CGContextSetShadow(context, CGSizeZero, 2);
+    CGContextSetShadowWithColor(context, CGSizeMake(0, 1), 8, [[UIColor blackColor] colorWithAlphaComponent:0.9].CGColor);
+    
     [baseImage drawAtPoint:CGPointMake(0, 0)];
     CGSize sizeQuote = [quote drawInRect:rectQuote withFont:self.fontQuote lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentLeft];
     
@@ -309,8 +311,8 @@
         
     } else if ([vc isKindOfClass:[DZUIFontPickerViewController class]]) {
         DZUIFontPickerViewController *viewController = (DZUIFontPickerViewController *) vc;
-        self.fontQuote = viewController.selectedFont;
-        self.fontBy = viewController.selectedFont;
+        self.fontQuote = [viewController.selectedFont fontWithSize:self.fontQuote.pointSize];
+        self.fontBy = [viewController.selectedFont fontWithSize:self.fontBy.pointSize];
         [self refreshQuoteImage];
         [self.navigationController popViewControllerAnimated:YES];
         
@@ -366,7 +368,7 @@
         
     }];    
 }
-
+/*
 - (BOOL) showTweetComposerWithImage:(UIImage *) image withURL:(NSURL *) url initialText:(NSString *) initialText
 {
     // 1. Check if we can tweet
@@ -405,22 +407,35 @@
         return NO;
     }
 }
-
-- (IBAction)actionTweet:(id)sender 
+ */
+/*
+- (void)actionTweet:(id)sender 
 {
     if ( self.imageView.image ) {
         NSString *text = [NSString stringWithFormat:@"%@ -%@", self.textView.text, self.textField.text];
         BOOL result = NO;
         result = [self showTweetComposerWithImage:self.imageView.image withURL:[NSURL URLWithString:@"http://www.iosappdev.co.kr"] initialText:text];
-        /*
-        NSString *message = @"Tweet successfully posted";
-        NSString *title = @"Information";
-        if ( !result ) {
-                message = @"Tweet was unsuccessful";
-            title = @"Error";
-        }
-        [DZUIAlertUtility alertWithMessage:message title:title];
-         */
     }
 }
+ */
+
+- (IBAction)actionDone:(id)sender {
+    [self.delegate viewControllerDone:self];
+}
+
+#pragma mark - API
+- (UIImage *) quoteImage
+{
+    return self.imageView.image;
+}
+
+- (NSString *) quote
+{
+    return self.textView.text;
+}
+- (NSString *) signature
+{
+    return self.textField.text;
+}
+
 @end
